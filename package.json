@@ -1,0 +1,21 @@
+{
+  "name": "2023-2-backend-study",
+  "version": "1.0.0",
+  "description": "Node.js testing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainsky3840/backend-study.git"
+  },
+  "author": "rainsky3840",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rainsky3840/backend-study/issues"
+  },
+  "homepage": "https://github.com/rainsky3840/backend-study#readme"
+}
