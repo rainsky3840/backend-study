@@ -1,3 +1,4 @@
+const { DiffieHellmanGroup } = require('crypto');
 const fs = require('fs');
 
 const requestHandler = (req, res) => {
@@ -21,7 +22,7 @@ const requestHandler = (req, res) => {
     });
     return req.on('end', () => { //res.statusCode를 안쪽으로 옮기고 return 추가 - 여기가 실행되면 바깥의 코드 실행 안시키기 위해
       const parsedBody = Buffer.concat(body).toString();
-      const message = parsedBody.split('=')[1];
+      const message = parsedBody.split('=')[1]
       console.log('PARSEDBODY>> ', parsedBody);
       fs.writeFile('message.txt', message, (err) => {
         console.log('ERROR!')
@@ -54,4 +55,4 @@ const requestHandler = (req, res) => {
 // }
 
 module.exports.handler = requestHandler;
-module.exports.someText = 'Some harded coded text';
+module.exports.someText = 'Some harded coded text hell yeah';
