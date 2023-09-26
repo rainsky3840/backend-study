@@ -1,34 +1,19 @@
-const http = require('http');
-// ./http일 경우, http module이 아니라 http라는 이름의 local file을 찾음
-// const fs = require('fs');
-// const { parse } = require('path');
+// const http = require('http');
 
-const routes = require('./routes');
+const express = require('express');
 
-// function rqListener(req, res) {
-// }
+const app = express();
 
-// http.createServer(rqListener);
+app.use((req, res, next) => {
+  console.log('in the middleware');
+  next(); //allows the request to continue to the next middlware in line
+});
 
-// event-driven architecture
-// http.createServer(function(req, res) {
-// })
+app.use((req, res, next) => {
+  console.log('in another middlware!');
+  res.send('<h1>Hello from Express.js</h1>');
+});
 
-// const server = http.createServer((req, res) => {
-  // console.log(req.url, req.method, req.headers);
-  // process.exit(); // => Program shuts down
-
-  // const url = req.url;
-  // const method = req.method;
-
-// });
-
-
-// DIFFERENT WAYS OF GETTING EXPORTS
-
-// const server = http.createServer(routes);
-
-console.log(routes.someText);
-const server = http.createServer(routes.handler);
-
-server.listen(3000);
+// const server = http.createServer(app);
+// server.listen(3000);
+app.listen(3000);
