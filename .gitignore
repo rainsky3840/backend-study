@@ -1,3 +1,2 @@
-#ignore .vscode, node_modules folder as they will be downloaded upon running "npm install"
-.vscode/
 node_modules
+.vscode
